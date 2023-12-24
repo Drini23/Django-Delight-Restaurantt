@@ -1,0 +1,37 @@
+{% include "inventory/navbar.html" %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Profit and Revenue</title>
+    <link rel="stylesheet" href="{% static 'home.css' %}">
+    <style>
+        .main {
+            text-align: center;
+            margin: 20px auto;
+            max-width: 400px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        p {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <h1>Profit and Revenue</h1>
+        <p>Profit: ${{ profit }}</p>
+        <p>Revenue: ${{ revenue }}</p>
+    </div>
+</body>
+</html>
+{% endblock %}

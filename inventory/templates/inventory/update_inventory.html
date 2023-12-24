@@ -1,0 +1,20 @@
+{% include "inventory/navbar.html" %}
+
+{%load static%}
+
+<head>
+    {% block head %}
+    <link rel="stylesheet" type="text/css" href="{% static 'home.css' %}">
+    {% endblock %}
+</head>
+
+{% block content %}
+<div class='main'>
+<h2>Update Inventory</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Update Inventory</button>
+</form>
+</div>
+{% endblock %}

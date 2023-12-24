@@ -1,0 +1,29 @@
+{% include "inventory/navbar.html" %}
+
+{%load static%}
+
+<head>
+    {% block head %}
+    <link rel="stylesheet" type="text/css" href="{% static 'home.css' %}">
+    {% endblock %}
+</head>
+
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Delete Ingredient</title>
+</head>
+<body>
+    <div class="main">
+    <h1>Delete Ingredient</h1>
+    <p>Are you sure you want to delete "{{ object.name }}" from the inventory?</p>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit">Yes, delete</button>
+    </form>
+    <a href="{% url 'add_menu_item' %}">Cancel</a>
+</div>
+</body>
+</html>
+{%endblock%}

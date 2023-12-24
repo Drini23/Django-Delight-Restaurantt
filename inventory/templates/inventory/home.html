@@ -1,0 +1,28 @@
+{% include "inventory/navbar.html" %}
+{%load static%}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Restaurant</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'home.css' %}">
+
+    {% endblock %}
+</head>
+<body>
+    <div class="main">
+    <header>
+        <h1>Welcome to Django Delights Restaurant</h1>
+        <p>Discover a world of delicious flavors!</p>
+    </header>
+    <section>
+        <h2>About Us</h2>
+        <h2>At Django Delights, we're dedicated to serving mouthwatering dishes prepared with love and care. Join us for a memorable dining experience.</h2>
+    </section>
+    </div>
+</body>
+</html>
+{% endblock %}

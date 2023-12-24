@@ -1,0 +1,35 @@
+{% include "inventory/navbar.html" %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Menu List</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'menu.css' %}">
+</head>
+<body>
+    <div class="main">
+        <h1>Menu List</h1>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Title</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for menu_item in object_list %}
+                <tr>
+                    <td>{{ menu_item.id }}</td>
+                    <td>{{ menu_item.title }}</td>
+                    <td>${{ menu_item.price }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div> <!-- Closing div for .main -->
+</body>
+</html>
+{% endblock %}
